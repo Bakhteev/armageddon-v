@@ -1,20 +1,25 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from '../card/Card'
 
 const Hero = () => {
-  axios
-    .get(
-      'https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY'
-    )
-    .then(({ data }) => console.log(data))
+  const [cards, setCards] = useState([])
 
-  // const cards = [{ name: '', date: '' }]
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/near_earth_objects')
+      .then(({ data }) => setCards(data))
+  }, [])
+
+
+  console.log(cards)
 
   return (
     <section className="hero">
       <div className="container">
-        <Card />
+        {cards.map((card) => (
+          <Card key={card.id} {...card} />
+        ))}
       </div>
     </section>
   )

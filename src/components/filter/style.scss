@@ -3,11 +3,12 @@
   padding: 26px 0;
 
   &__label {
-    align-items: center;
+    align-items: baseline;
     cursor: pointer;
 
     input {
       margin-right: 10px;
+      cursor: pointer;
     }
   }
 
