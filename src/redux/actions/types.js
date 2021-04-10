@@ -1,0 +1,2 @@
+export const FILTER_BY_DANGER = 'FILTER_BY_DANGER'
+// export const LUNAR_DISTANCE = 'LUNAR_DISTANCE'

@@ -2,10 +2,10 @@
   position: relative;
   justify-content: space-between;
   overflow: hidden;
+  margin-bottom: 16px;
   padding: 24px 24px 40px;
   border: 1px solid #000;
   border-radius: 10px;
-  background: linear-gradient(90deg, #cff37d 0%, #7de88c 100%);
 
   .dino {
     position: absolute;
@@ -16,7 +16,17 @@
   .asteroid {
     position: absolute;
     left: 122px;
-    top: 28px;
+
+    // top: 28px;
+  }
+
+  &__list {
+    width: 100%;
+  }
+
+  &__text-block {
+    position: relative;
+    z-index: 2;
   }
 
   &__name {
@@ -30,6 +40,7 @@
   &__item {
     justify-content: space-between;
     margin-bottom: 10px;
+    width: 100%;
     font-size: 16px;
     line-height: 1.5;
     white-space: nowrap;
@@ -53,8 +64,6 @@
       margin: 8px 0;
       font-weight: 800;
     }
-
-    // justify-content: flex-end;
   }
 
   &__btn {
@@ -64,5 +73,13 @@
     line-height: 20px;
     color: #fff;
     background: #186dd6;
+  }
+
+  &.card--safe {
+    background: linear-gradient(90deg, #cff37d 0%, #7de88c 100%);
+  }
+
+  &.card--danger {
+    background: linear-gradient(90deg, #ffb199 0%, #ff0844 100%);
   }
 }

@@ -1,9 +1,32 @@
 import React from 'react'
 
 const Asteroid = ({ width, height }) => {
+  const leftfunc = () => {
+    let left = 0
+
+    if (width * 71 > 350 && width * 71 < 550) {
+      return (left = 122)
+    }
+    if (width * 71 > 550 && width * 71 < 1000) {
+      return (left = -100)
+    }
+    if (width * 71 > 1000 && width * 71 < 1500) {
+      return (left = -200)
+    }
+    if (width * 71 > 1500 && width * 71 < 2000) {
+      return (left = -300)
+    }
+  }
+
+  console.log(leftfunc())
   return (
     <svg
-      style={{ width: width, height: height }}
+      style={{
+        width: width * 71,
+        height: height * 72,
+        bottom: '40%',
+        left: leftfunc() + 'px',
+      }}
       viewBox="0 0 71 72"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

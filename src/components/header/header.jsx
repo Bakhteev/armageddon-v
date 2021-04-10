@@ -1,6 +1,5 @@
 import React from 'react'
 import './style.scss'
-import Filter from '../filter/Filter'
 
 const Header = () => (
   <header className="header">
@@ -28,7 +27,6 @@ const Header = () => (
           </ul>
         </nav>
       </div>
-      <Filter />
     </div>
   </header>
 )
