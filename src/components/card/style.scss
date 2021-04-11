@@ -16,8 +16,6 @@
   .asteroid {
     position: absolute;
     left: 122px;
-
-    // top: 28px;
   }
 
   &__list {
@@ -54,6 +52,8 @@
   }
 
   &__button-block {
+    position: relative;
+    z-index: 2;
     margin-left: 102px;
     box-sizing: border-box;
     font-size: 16px;
@@ -68,11 +68,19 @@
 
   &__btn {
     padding: 14px 16px;
+    border: 1px solid transparent;
     border-radius: 24px;
     font-size: 16px;
     line-height: 20px;
     color: #fff;
     background: #186dd6;
+    transition: 0.3s;
+
+    &:hover {
+      border-color: #186dd6;
+      color: #186dd6;
+      background: #fff;
+    }
   }
 
   &.card--safe {

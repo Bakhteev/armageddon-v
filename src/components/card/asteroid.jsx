@@ -2,23 +2,23 @@ import React from 'react'
 
 const Asteroid = ({ width, height }) => {
   const leftfunc = () => {
-    let left = 0
+    let left = 122
 
-    if (width * 71 > 350 && width * 71 < 550) {
-      return (left = 122)
-    }
     if (width * 71 > 550 && width * 71 < 1000) {
       return (left = -100)
     }
     if (width * 71 > 1000 && width * 71 < 1500) {
       return (left = -200)
     }
-    if (width * 71 > 1500 && width * 71 < 2000) {
+    if (width * 71 > 1500 && width * 71 < 1800) {
       return (left = -300)
     }
-  }
+    if (width * 71 > 1800 && width * 71 < 2200) {
+      return (left = -500)
+    }
 
-  console.log(leftfunc())
+    return left
+  }
   return (
     <svg
       style={{

@@ -3,13 +3,17 @@ import Asteroid from './asteroid'
 import Dino from './dino'
 import './style.scss'
 import { FormatDate } from '../../utils/formatDate'
+import { useDispatch, useSelector } from 'react-redux'
+import { addItemToBasket } from '../../redux/actions/basket.action'
 
 const Card = ({
+  id,
   name,
   estimated_diameter = {},
   close_approach_data,
   lunarDistance,
   is_potentially_hazardous_asteroid,
+  basket
 }) => {
   const { meters = {} } = estimated_diameter
   const { estimated_diameter_min, estimated_diameter_max } = meters
@@ -22,6 +26,14 @@ const Card = ({
     epoch_date_close_approach,
   } = close_approach_data[close_approach_data.length - 1]
   const { kilometers, lunar } = miss_distance
+
+  const dispatch = useDispatch()
+  const cards = useSelector(({ cards }) => cards)
+
+  const handleAddItemToBasket = (id) => {
+    const item = cards.items.find((item) => item.id === id)
+    dispatch(addItemToBasket(item))
+  }
 
   return (
     <div
@@ -65,7 +77,9 @@ const Card = ({
       <div className="card__button-block">
         <h3>Оценка:</h3>
         <h4>не опасен</h4>
-        <button className="card__btn">На уничтожение</button>
+        <button className="card__btn" onClick={() => handleAddItemToBasket(id)}>
+          На уничтожение
+        </button>
       </div>
     </div>
   )
