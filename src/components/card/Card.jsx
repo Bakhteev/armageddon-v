@@ -13,7 +13,7 @@ const Card = ({
   close_approach_data,
   lunarDistance,
   is_potentially_hazardous_asteroid,
-  basket
+  basket,
 }) => {
   const { meters = {} } = estimated_diameter
   const { estimated_diameter_min, estimated_diameter_max } = meters
@@ -76,7 +76,7 @@ const Card = ({
       </div>
       <div className="card__button-block">
         <h3>Оценка:</h3>
-        <h4>не опасен</h4>
+        <h4>{is_potentially_hazardous_asteroid ? 'опасен' : 'не опасен'}</h4>
         <button className="card__btn" onClick={() => handleAddItemToBasket(id)}>
           На уничтожение
         </button>

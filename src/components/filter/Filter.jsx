@@ -7,7 +7,6 @@ import {
 import './style.scss'
 
 const Filter = ({ lunarDistance, SetLunarDistance }) => {
- 
   const filtered = useSelector(({ cards }) => cards.filtered)
 
   const [filter, setFilter] = useState(false)
