@@ -3,10 +3,12 @@ import {
   FILTER_BY_DANGER_ON,
   FILTER_BY_DANGER_OFF,
   FETCH_CARDS,
+  NEW_PAGE,
 } from '../actions/types'
 
 const initialState = {
   items: [],
+  page: 0,
   filtered: false,
 }
 
@@ -27,6 +29,11 @@ export const Cards = (state = initialState, action) => {
       return {
         ...state,
         filtered: false,
+      }
+    case NEW_PAGE:
+      return {
+        ...state,
+        page: state.page + 1,
       }
     default:
       return state
