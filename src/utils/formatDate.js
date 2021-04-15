@@ -1,4 +1,4 @@
-export const FormatDate = (codedDate, shouldFormateDate) => {
+export const FormatDate = (codedDate, shouldFormateDate ) => {
   const Month = [
     { ru: 'Января', eng: 'Jan' },
     { ru: 'Февраля', eng: 'Feb' },

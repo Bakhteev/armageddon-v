@@ -1,19 +1,18 @@
 /* eslint-disable indent */
 import axios from 'axios'
-import React, { Component, useEffect, useState } from 'react'
-import Card from '../card/Card'
-import { useDispatch, useSelector } from 'react-redux'
-import { mapDispatchToProps } from '../../redux/actions/cards.action'
-import './style.scss'
+import React, { useEffect, useState } from 'react'
 import { fetchCards, pageAction } from '../../redux/actions/cards.action'
+import { useDispatch, useSelector } from 'react-redux'
+import Card from '../card/Card'
 import Filter from '../filter/Filter'
+import './style.scss'
 
 const Hero = () => {
   const cards = useSelector(({ cards }) => cards)
 
   const [loading, setLoaading] = useState(false)
   const [lunarDistance, setLunarDistance] = useState(false)
-  
+
   const dispatch = useDispatch()
 
   const fetchData = async (page) => {
@@ -38,7 +37,6 @@ const Hero = () => {
           document.body.clientHeight - window.innerHeight &&
         go
       ) {
-        // await fetchData(page)
         dispatch(pageAction())
         setTimeout(() => {
           go = false
@@ -95,4 +93,3 @@ const Hero = () => {
 }
 
 export default Hero
-

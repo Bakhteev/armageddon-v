@@ -5,6 +5,7 @@ import './style.scss'
 import { FormatDate } from '../../utils/formatDate'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItemToBasket } from '../../redux/actions/basket.action'
+import { Link } from 'react-router-dom'
 
 const Card = ({
   id,
@@ -36,15 +37,16 @@ const Card = ({
   }
 
   return (
-    <div
+    <Link
+      to={`/asteroid/${id}`}
       className={`hero__card card ${
         is_potentially_hazardous_asteroid ? 'card--danger' : 'card--safe'
       } row`}
     >
       <div className="col-4">
         <Asteroid
-          width={Math.round((min + max) / 2) / 56}
-          height={Math.round((min + max) / 2) / 56}
+          width={Math.round((min + max) / 2 / 106) * 0.3}
+          height={Math.round((min + max) / 2 / 106) * 0.3}
         />
         <Dino />
       </div>
@@ -81,7 +83,7 @@ const Card = ({
           На уничтожение
         </button>
       </div>
-    </div>
+    </Link>
   )
 }
 
