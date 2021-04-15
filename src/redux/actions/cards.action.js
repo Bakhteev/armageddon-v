@@ -22,11 +22,9 @@ export const pageAction = () => ({
   type: NEW_PAGE,
 })
 
-export const mapDispatchToProps = (dispatch) => {
-  return {
-    filterActionOn: () => dispatch(filterActionOn()),
-    filterActionOff: () => dispatch(filterActionOff()),
-    fetchCards: (payload) => dispatch(fetchCards(payload)),
-    pageAction: () => dispatch(pageAction()),
-  }
-}
+export const mapDispatchToProps = (dispatch) => ({
+  filterActionOn: () => dispatch(filterActionOn()),
+  filterActionOff: () => dispatch(filterActionOff()),
+  fetchCards: (payload) => dispatch(fetchCards(payload)),
+  pageAction: () => dispatch(pageAction()),
+})

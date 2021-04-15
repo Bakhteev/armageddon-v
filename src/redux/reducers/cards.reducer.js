@@ -17,7 +17,6 @@ export const Cards = (state = initialState, action) => {
     case FETCH_CARDS:
       return {
         ...state,
-        filtered: false,
         items: [...state.items, ...action.payload],
       }
     case FILTER_BY_DANGER_ON:

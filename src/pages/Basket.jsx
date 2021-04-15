@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Card from '../components/card/Card'
+import { pageAction } from '../redux/actions/cards.action'
 
 const BasketPage = () => {
   const dispatch = useDispatch()
 
   const basketItems = useSelector(({ basket }) => basket.items)
+
+  useEffect(() => {
+    dispatch(pageAction())
+  }, [])
 
   if (basketItems.length === 0) {
     return (

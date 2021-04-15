@@ -6,7 +6,7 @@ import {
 } from '../../redux/actions/cards.action'
 import './style.scss'
 
-const Filter = ({ lunarDistance, SetLunarDistance }) => {
+const Filter = ({ lunarDistance, setLunarDistance }) => {
   const filtered = useSelector(({ cards }) => cards.filtered)
 
   const [filter, setFilter] = useState(false)
@@ -14,7 +14,7 @@ const Filter = ({ lunarDistance, SetLunarDistance }) => {
   const dispatch = useDispatch()
 
   const handleClick = (bool) => {
-    SetLunarDistance(bool)
+    setLunarDistance(bool)
   }
 
   const handleChange = () => {
